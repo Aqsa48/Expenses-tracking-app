@@ -2,6 +2,12 @@
 
 A small React app by Aqsa Umar for tracking income and expenses in USD.
 
+## Live demo
+
+[Try the expense tracker](https://aqsa48.github.io/Expenses-tracking-app/)
+
+No account is required. Transactions are saved only in your browser.
+
 ## Features
 
 - Add income and expenses with a description and amount.
