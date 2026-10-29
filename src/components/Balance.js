@@ -1,11 +1,7 @@
-import React from 'react'
-
+import React, { useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState';
+import { summarize, formatMoney } from '../money';
 export const Balance = () => {
-    return (
-        <div>
-            <h4>Current Balance</h4>
-            <h1>$0.00</h1>
-
-        </div>
-    )
-}
+  const { transactions } = useContext(GlobalContext);
+  return <section aria-label="Current balance"><h2>Current balance</h2><p className="balance">{formatMoney(summarize(transactions).balance)}</p></section>;
+};

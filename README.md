@@ -1,68 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Expense tracker
 
-## Available Scripts
+A small React app by Aqsa Umar for tracking income and expenses in USD.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Add income and expenses with a description and amount.
+- See your balance, total income, and total expenses update immediately.
+- Remove transactions from the history.
+- Keep transactions across page reloads using browser local storage.
+- Use the app on mobile or with a keyboard.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Positive amounts represent income. Negative amounts represent expenses. For example, add `1000` for income and `-25.50` for groceries.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Run locally
 
-### `npm test`
+```sh
+npm ci
+npm start
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open http://localhost:3000. This project currently uses React 16 and Create React App 3.4.1. Its older build tooling may require a compatible Node environment; newer Node versions can need `NODE_OPTIONS=--openssl-legacy-provider` for Webpack 4.
 
-### `npm run build`
+## Validate
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm test -- --watchAll=false --runInBand
+npm run build
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Tests cover adding and deleting transactions, totals, decimal arithmetic, persistence, invalid input, and malformed saved data.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Storage and privacy
 
-### `npm run eject`
+Transactions stay in local storage in the browser and origin where you enter them. There is no account, server, cross-device sync, or backup. Clearing browser site data removes the saved transactions. If browser storage is blocked, the app shows a message and works for the current session.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This is a learning and portfolio project. It uses USD with two decimal places and is intended for simple personal tracking.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- `src/components`: form, history, balance, and summary.
+- `src/context`: transaction state and browser persistence.
+- `src/money.js`: currency formatting and totals calculated in cents.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributing
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Issues with clear reproduction steps and focused pull requests are welcome. Run the tests and production build before proposing changes. Never commit personal financial data or credentials.
