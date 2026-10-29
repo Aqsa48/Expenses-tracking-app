@@ -1,177 +1,30 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-
-:root {
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #f7f7f7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-}
-
-.container {
-  margin: 30px auto;
-  width: 350px;
-}
-
-h1 {
-  letter-spacing: 1px;
-  margin: 0;
-  text-align: center;
-}
-
-h2 {
-  letter-spacing: 1px;
-  margin: 0;
-  text-align: center;
-}
-
-h3 {
-  border-bottom: 1px solid #bbb;
-  padding-bottom: 10px;
-  margin: 40px 0 10px;
-  text-align: center;
-}
-
-h4 {
-  margin: 0;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.inc-exp-container {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-}
-
-.inc-exp-container > div {
-  flex: 1;
-  text-align: center;
-}
-
-.inc-exp-container > div:first-of-type {
-  border-right: 1px solid #dedede;
-}
-
-.money {
-  font-size: 20px;
-  letter-spacing: 1px;
-  margin: 5px 0;
-}
-
-.money.plus {
-  color: #b6960a;
-  font-weight: bold;
-}
-
-.money.minus {
-  color: #2da3ad;
-  font-weight: bold;
-}
-
-label {
-  display: inline-block;
-  margin: 10px 0;
-  font-weight: bold;
-}
-
-input[type='text'],
-input[type='number'] {
-  border: 1px solid #dedede;
-  border-radius: 5px;
-  display: block;
-  font-size: 16px;
-  padding: 10px;
-  width: 100%;
-}
-
-.btn {
-  cursor: pointer;
-  background-color: lightsteelblue;
-  box-shadow: var(--box-shadow);
-  color: #fff;
-  border: 0;
-  display: block;
-  font-size: 16px;
-  margin: 10px 0 30px;
-  padding: 10px;
-  width: 100%;
-  font-weight: bold;
-}
-
-.btn:focus,
-.delete-btn:focus {
-  outline: 5px;
-}
-
-.list {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 40px;
-}
-
-.list li {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  color: #333;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.list li.plus {
-  border-right: 5px solid #b6960a;
-}
-
-.list li.plus:hover {
-  border-right: 5px solid #b6960a;
-  background-color: #b6960a;
-  color: #f7f7f7
-}
-
-.list li.minus {
-  border-right: 5px solid #2da3ad;
-}
-
-.list li.minus:hover {
-  border-right: 5px solid #2da3ad;
-  background-color: #2da3ad;
-  color: #f7f7f7
-}
-
-
-.delete-btn {
-  cursor: pointer;
-  background-color: #8a6a66;
-  border: 0;
-  color: #fff;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 2px 5px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-100%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.list li:hover .delete-btn {
-  opacity: 1;
-}
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f6f8; color: #172b3a; font-family: system-ui, sans-serif; line-height: 1.5; }
+.container { width: min(100% - 32px, 560px); margin: 48px auto; }
+header { margin-bottom: 36px; }
+h1 { font-size: clamp(30px, 7vw, 42px); line-height: 1.15; margin: 8px 0; }
+h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .05em; margin: 0; }
+h3 { font-size: 19px; border-bottom: 1px solid #d5dce3; padding-bottom: 12px; margin: 32px 0 16px; }
+p { margin: 8px 0; }
+.eyebrow { color: #536878; font-size: 13px; text-transform: uppercase; letter-spacing: .1em; }
+.balance { font-size: 40px; font-weight: 700; margin: 4px 0 24px; overflow-wrap: anywhere; }
+.inc-exp-container { display: grid; grid-template-columns: 1fr 1fr; background: white; padding: 22px; border: 1px solid #d5dce3; border-radius: 12px; gap: 16px; }
+.inc-exp-container > div + div { border-left: 1px solid #d5dce3; padding-left: 16px; }
+.money { font-size: 24px; font-weight: 600; overflow-wrap: anywhere; }
+.money.plus { color: #176743; }
+.money.minus { color: #a33432; }
+label { display: block; margin: 18px 0 6px; font-weight: 600; }
+input { border: 1px solid #9aaab7; border-radius: 8px; display: block; font: inherit; padding: 12px; width: 100%; background: white; }
+#amount-help, .privacy-note { font-size: 13px; color: #536878; }
+button { cursor: pointer; font: inherit; }
+.btn { width: 100%; border: 0; border-radius: 8px; padding: 13px; background: #244e70; color: white; margin: 20px 0; font-weight: 600; }
+.btn:hover { background: #183b57; }
+:focus-visible { outline: 3px solid #b26712; outline-offset: 3px; }
+.list { list-style: none; padding: 0; }
+.list li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 12px; padding: 14px; margin: 10px 0; border: 1px solid #d5dce3; border-left: 4px solid #176743; border-radius: 8px; background: white; }
+.list li.minus { border-left-color: #a33432; }
+.list li span { overflow-wrap: anywhere; }
+.delete-btn { background: transparent; border: 1px solid #bcc8d1; border-radius: 5px; padding: 6px 8px; color: #7d2927; font-size: 13px; }
+[role='alert'] { color: #9e2424; }
+.privacy-note { text-align: center; }
+@media (max-width: 400px) { .list li { grid-template-columns: minmax(0, 1fr) auto; } .delete-btn { grid-column: 2; } .money { font-size: 20px; } }

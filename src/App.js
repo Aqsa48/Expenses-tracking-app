@@ -1,26 +1,15 @@
 import React from 'react';
-import { Header } from './components/Header'
-import { Balance } from './components/Balance'
-import { AccountSummary } from './components/AccountSummary'
-import { TransactionHistory } from './components/TransactionHistory'
-import { AddTransaction } from './components/AddTransaction'
-import './App.css'
-
-// import global provider
+import { Header } from './components/Header';
+import { Balance } from './components/Balance';
+import { AccountSummary } from './components/AccountSummary';
+import { TransactionHistory } from './components/TransactionHistory';
+import { AddTransaction } from './components/AddTransaction';
 import { GlobalProvider } from './context/GlobalState';
-
+import './App.css';
 function App() {
-  return (
-    <GlobalProvider>
-      <h1> < Header /> </h1>
-      <div className="container">
-        <h1> < Balance /> </h1>
-        <h1> < AccountSummary /> </h1>
-        <h1> < TransactionHistory /> </h1>
-        <h1> < AddTransaction /> </h1>
-      </div>
-    </GlobalProvider>
-  );
+  return <main className="container"><GlobalProvider>
+    <Header /><Balance /><AccountSummary /><TransactionHistory /><AddTransaction />
+    <p className="privacy-note">Saved in this browser. No account required.</p>
+  </GlobalProvider></main>;
 }
-
 export default App;

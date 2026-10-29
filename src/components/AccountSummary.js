@@ -1,18 +1,11 @@
-import React from 'react'
-
+import React, { useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState';
+import { summarize, formatMoney } from '../money';
 export const AccountSummary = () => {
-    return (
-        <div className="inc-exp-container">
-            <div>
-                <h4> Income</h4>
-                <p className='money plus'>$0.00</p>
-            </div>
-            <div>
-                <h4>  Expenses </h4>
-                <p className='money minus'>$0.00</p>
-
-            </div>
-
-        </div>
-    )
-}
+  const { transactions } = useContext(GlobalContext);
+  const totals = summarize(transactions);
+  return <section className="inc-exp-container" aria-label="Account summary">
+    <div><h2>Income</h2><p className="money plus">{formatMoney(totals.income)}</p></div>
+    <div><h2>Expenses</h2><p className="money minus">{formatMoney(totals.expenses)}</p></div>
+  </section>;
+};
